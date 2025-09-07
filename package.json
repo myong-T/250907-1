@@ -1,0 +1,14 @@
+{
+  "name": "threejs-codespace-cube",
+  "version": "1.0.0",
+  "description": "A basic Three.js cube for Codespaces",
+  "main": "main.js",
+  "scripts": {
+    "start": "npx live-server .",
+    "deploy": "gh-pages -d ."
+  },
+  "dependencies": {
+    "live-server": "^1.2.2",
+    "gh-pages": "^6.1.1"
+  }
+}
