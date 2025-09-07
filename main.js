@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 // 1. 장면(Scene) 생성
 const scene = new THREE.Scene();
@@ -18,13 +19,15 @@ const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
 
+// --- OrbitControls 추가 ---
+const controls = new OrbitControls(camera, renderer.domElement);
+
 // 5. 애니메이션 루프
 function animate() {
     requestAnimationFrame(animate);
 
-    // 큐브 회전
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    // controls.update()를 호출하여 마우스 상호작용 업데이트
+    controls.update();
 
     renderer.render(scene, camera);
 }
